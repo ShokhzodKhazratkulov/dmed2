@@ -5,16 +5,6 @@ export const DMED_PRIMARY = '#0066CC';
 
 export const EMBLEM = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Emblem_of_Uzbekistan.svg/512px-Emblem_of_Uzbekistan.svg.png";
 
-export const Emblem: React.FC<{ className?: string }> = ({ className = "w-24 h-24" }) => (
-  <img 
-    src={EMBLEM} 
-    alt="Gerb" 
-    className={className} 
-    crossOrigin="anonymous" 
-    referrerPolicy="no-referrer"
-  />
-);
-
 export const UzbekistanEmblem: React.FC<{ className?: string }> = ({ className = "w-24 h-24" }) => (
   <img 
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Emblem_of_Uzbekistan.svg/512px-Emblem_of_Uzbekistan.svg.png" 

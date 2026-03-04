@@ -161,7 +161,7 @@ const CertificatePreview: React.FC<Props> = ({ certificate, onClose, onUpdate })
               {data.clinicName}
             </div>
             <div className="flex justify-center col-span-1">
-              <UzbekistanEmblem className="w-14 h-14" />
+              <UzbekistanEmblem className="w-16 h-16" />
             </div>
             <div className="col-span-1"></div>
           </div>
