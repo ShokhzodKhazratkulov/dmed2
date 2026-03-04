@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppTab, Certificate, CertificateData, Attachment } from './types';
-import { DMEDLogo, DMED_LOGO_URL } from './constants';
+import { DMEDLogo, Emblem, DMED_LOGO_URL } from './constants';
 import CertificateForm from './components/CertificateForm';
 import CertificatePreview from './components/CertificatePreview';
 import { 
@@ -190,8 +190,13 @@ const App: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white rounded-3xl p-8 shadow-2xl text-center">
-          <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-6 overflow-hidden p-4">
-            <img src={DMED_LOGO_URL} alt="DMED" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+          <div className="flex justify-center gap-4 mb-6">
+            <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center overflow-hidden p-4">
+              <Emblem className="w-full h-full object-contain" />
+            </div>
+            <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center overflow-hidden p-4">
+              <img src={DMED_LOGO_URL} alt="DMED" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+            </div>
           </div>
           <h1 className="text-2xl font-bold text-slate-800 mb-2">Hujjatni tasdiqlash</h1>
           <p className="text-slate-500 mb-8">SQL bazasidan hujjatni olish uchun xavfsizlik kodini kiriting</p>
@@ -248,7 +253,10 @@ const App: React.FC = () => {
       <nav className="bg-white/80 backdrop-blur-lg border-b border-slate-200 sticky top-0 z-40 px-6 py-4 shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-6">
-            <DMEDLogo />
+            <div className="flex items-center gap-3">
+              <Emblem className="w-10 h-10 object-contain" />
+              <DMEDLogo />
+            </div>
             <div className="h-6 w-px bg-slate-200 hidden md:block"></div>
             <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${isCloudEnabled() ? 'bg-green-50 text-green-600' : 'bg-slate-100 text-slate-400'}`}>
               <div className={`w-1.5 h-1.5 rounded-full ${isCloudEnabled() ? 'bg-green-500 animate-pulse' : 'bg-slate-300'}`}></div>
@@ -280,7 +288,10 @@ const App: React.FC = () => {
             <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#0035AD] to-[#0066CC] p-12 md:p-20 text-white shadow-2xl mb-12">
               <div className="relative z-10 max-w-2xl">
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-[2px] mb-8 border border-white/10">
-                  <img src={DMED_LOGO_URL} alt="DMED" className="w-5 h-5 object-contain" referrerPolicy="no-referrer" />
+                  <div className="flex items-center gap-2">
+                    <Emblem className="w-5 h-5 object-contain" />
+                    <img src={DMED_LOGO_URL} alt="DMED" className="w-5 h-5 object-contain" referrerPolicy="no-referrer" />
+                  </div>
                   <span className="w-1.5 h-1.5 bg-cyan-300 rounded-full animate-pulse"></span>
                   Tizim yangilandi — v3.0
                 </div>
@@ -398,8 +409,13 @@ const App: React.FC = () => {
         {activeTab === AppTab.VERIFY && (
           <div className="max-w-xl mx-auto mt-20 animate-in fade-in slide-in-from-bottom-8 duration-500">
             <div className="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-100 text-center">
-              <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-8">
-                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              <div className="flex justify-center gap-4 mb-8">
+                <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center">
+                  <Emblem className="w-12 h-12 object-contain" />
+                </div>
+                <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center">
+                  <DMEDLogo className="scale-125" />
+                </div>
               </div>
               <h2 className="text-3xl font-black text-slate-800 mb-2">Hujjatni tekshirish</h2>
               <p className="text-slate-400 mb-10 font-medium">Hujjat ID kodini kiriting</p>
@@ -508,8 +524,13 @@ const App: React.FC = () => {
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => !isUploading && setShowUploadModal(false)}></div>
           <div className="relative bg-white w-full max-w-lg rounded-[2.5rem] p-10 shadow-2xl animate-in zoom-in-95 duration-300">
             <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-blue-600">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.414a4 4 0 00-5.656-5.656l-6.415 6.414a6 6 0 108.486 8.486L20.5 13" /></svg>
+              <div className="flex justify-center gap-3 mb-4">
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                  <Emblem className="w-10 h-10 object-contain" />
+                </div>
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                  <DMEDLogo className="scale-110" />
+                </div>
               </div>
               <h2 className="text-2xl font-black text-slate-800 uppercase tracking-tight">Fayl biriktirish</h2>
               <p className="text-slate-400 font-medium">Iltimos, PDF yoki boshqa hujjatni tanlang</p>

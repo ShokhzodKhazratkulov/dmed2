@@ -3,6 +3,18 @@ import React from 'react';
 
 export const DMED_PRIMARY = '#0066CC';
 
+export const EMBLEM = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAVuBRQDASIAAhEBAxEB/8QAHAAAAgIDAQEAAAAAAAAAAAAAAAQDBQEGBwII/8QAYxAAAQMCAgUJBQQDCwcJBgILAQACAwQFBhESFCExoQcTM0FRUmFxgSIyQmKRI7HB0RVyghY0Q2aSoqSy4ePwFxgkRFNzwgglNVRjZJPS8SY2N3SDs0VVVnWUhKOl4keGxMP/xAAbAQEAAgMBAQAAAAAAAAAAAAAAAwQBAgUGB//EAEURAAICAQEEBggFAgQFBAIDAQABAgMRBAUSITETQVFhcfAiMoGRobHB0RQjQlLhBjMVYpLxNENygqIkU7LSFsIlNeJU/9oADAMBAAIRAxEAPwDqSEIQAnqfoGpFPU/QNQEiEIQC1X8HqlkzV/B6pZAClp+naolLT9O1AOoQhACrlYquQGEIQgHqfoGqRR0/QNUiAEtV/B6plLVfweqAWQhCAlp+nanUlT9O1OoDKwdyEICuWFlYQAnqfoGpFPU/QNQEiEIQC1X8HqlkzV/B6pZAClp+naolLT9O1AOoQhACrlYquQGEIQgHqfoGqRR0/QNUiAEtV/B6plLVfweqAWQhCAlp+nanUlT9O1OoAQhCArlhZWEAJ6n6BqRT1P0DUBIhCEAtV/B6pZM1fweqWQAp6X31Apafp2oB5YQhACrlYquQGEIQgHqfoGqRR0/QNUiAEtV/B6plLVfweqAWQhCAlp+nanUlT9O1OoAQhCArlhZWEAJ6n6BqRT1P0DUBIhCEAtV/B6pZM1fweqWQAp6X31Apafp2oB5YQhACrlYquQGEIQgHqfoGqRR0/QNUiAEtV/B6plLVfweqAWQhCAlp+nanUlT9O1OoAQhCArlhZWEAJ6n6BqRT1P0DUBIhCEAtV/B6pZM1fweqWQA";
+
+export const Emblem: React.FC<{ className?: string }> = ({ className = "w-24 h-24" }) => (
+  <img 
+    src={EMBLEM} 
+    alt="Gerb" 
+    className={className} 
+    crossOrigin="anonymous" 
+    referrerPolicy="no-referrer"
+  />
+);
+
 export const UzbekistanEmblem: React.FC<{ className?: string }> = ({ className = "w-24 h-24" }) => (
   <img 
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Emblem_of_Uzbekistan.svg/512px-Emblem_of_Uzbekistan.svg.png" 
